@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+    <title>Product Preview</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Montserrat:wght@500;700&display=swap" rel="stylesheet">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            screens: {
+              mobile: "375px",
+              desktop: "1440px",
+            },
+            colors: {
+              "Primary-Dark-cyan": "hsl(158, 36%, 37%)",
+              "Primary-Cream": "hsl(30, 38%, 92%)",
+              "Neutral-Very-Dark-Blue": "hsl(212, 21%, 14%)",
+              "Neutral-Dark-Grayish-Blue": "hsl(228, 12%, 48%)",
+              "Neutral-White": "hsl(0, 0%, 100%)",
+              "hover-btn": "hsla(157, 79%, 11%, 0.925)",
+              attribution: "hsl(228, 45%, 44%)"
+            },
+            fontFamily: {
+                primary: ['Montserrat', 'sans-serif'],
+                secondary: ['Fraunces', "serif"]
+            },
+            fontSize: {
+              body: "14px",
+            },
+          },
+        },
+      };
+    </script>
+</head>
+<body class="bg-Primary-Cream font-primary m-4 self-center
+flex flex-col justify-center items-center overflow-hidden md:h-[90dvh]
+">
+    <main class="container w-fit rounded-[1rem] m-4 bg-Neutral-White 
+    md:grid md:grid-cols-2 md:gap-2 md:max-w-2xl max-w-xs
+    ">
+    <section id="hero" class="container">
+        <div id="desktop-img" class="hidden md:block md:w-fit">
+            <img class="img-fluid rounded-tl-[1rem] rounded-bl-[1rem]" src="./images/image-product-desktop.jpg" alt="Image of Product">
+        </div>
+        <div id="mobile-img" class="md:hidden w-fit">
+            <img class="img-fluid rounded-tl-[1rem] rounded-tr-[1rem]" src="./images/image-product-mobile.jpg" alt="Product Image">
+        </div>
+    </section>
+    <div class="md:grid md:place-items-center" >
+    <section class="title px-[2rem]">
+          <h2 class="py-[1rem] text-[.81rem] leading-[.3rem] font-normal 
+          tracking-[.3rem] text-Neutral-Dark-Grayish-Blue uppercase md:text-[1rem] md:my-5">Perfume</h2>
+          <h1 class=" leading-[2rem] font-secondary font-bold 
+          tracking-[-1%] text-[1.7rem] text-Neutral-Very-Dark-Blue
+          md:text-[2.6rem] md:leading-9 md:pb-5
+          ">Gabrielle Essence Eau De Parfum</h1>
+          <p class="py-3 text-Neutral-Dark-Grayish-Blue 
+          text-[.76rem] md:text-[1.1rem]">
+            A floral, solar and voluptuous interpretation composed by Olivier Polge, 
+            Perfumer-Creator for the House of CHANEL.
+          </p>
+    </section>
+    <div class="last pb-[2rem] md:grid md:grid-cols-1 md:w-full">
+        <section class="price px-[2rem]">
+            <h2 class="font-secondary text-Primary-Dark-cyan text-[2rem]">$149.99
+              <span class="text-Neutral-Dark-Grayish-Blue 
+              line-through text-[1rem] font-thin"> $169.99</span>
+            </h2>
+        </section>
+        <div class="flex justify-center align-center py-2 md:w-full">
+          <button id="btn" 
+          class="w-10/12 text-Neutral-White  text-[1rem] py-[1rem] m-0 
+          flex flex-column justify-center align-center gap-3 hover:bg-hover-btn cursor-pointer
+          font-bold bg-Primary-Dark-cyan border-inherit rounded-md">
+          <img class="img-fluid w-[1.2rem]  h-full" src="./images/icon-cart.svg" alt="cart sign">
+          Add to Cart
+        </button>
+      </div>
+    </div>
+  </div>
+</main>
+<footer class="text-center">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank" class="text-attribution">Frontend Mentor</a>. 
+    Coded by <a href="https://www.frontendmentor.io/profile/Ganesh-G0" target="_blank" class="text-attribution">Ganesh</a>
+</footer>
+</body>
+</html>
