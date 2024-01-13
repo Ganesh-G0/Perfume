@@ -19,10 +19,7 @@
 */
 body {
     line-height: 1.5;
-    color: var(--veryDarkBlue);
-    background-color: var(--cream);
-    -webkit-font-smoothing: antialiased;
-    font-family: 'Montserrat', 'sans-serif';
+   -webkit-font-smoothing: antialiased;
 }
 /*   5. Improve media defaults */
 img, picture, video, canvas, svg {
@@ -46,10 +43,14 @@ p, h1, h2, h3, h4, h5, h6 {
 #mobile-img { display: inline-grid; }
 
 body {
+    height: 100dvh;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 2rem;
+    color: var(--veryDarkBlue);
+    background-color: var(--cream);
+    font-family: 'Montserrat', 'sans-serif';
 }
 .main {
     margin: 1rem;
@@ -136,9 +137,6 @@ body {
     #desktop-img { display: block; }
     #mobile-img { display: none; }
     .first img { border-radius: .5rem 0 0 .5rem; }
-    body {
-        min-height: 100dvh;
-    }
     .main {
         margin: 0;
         display: grid;
