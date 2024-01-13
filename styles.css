@@ -1,0 +1,157 @@
+:root {
+    --white: hsl(0, 0%, 100%);
+    --cream: hsl(30, 38%, 92%);
+    --darkCyan: hsl(158, 36%, 37%);
+    --veryDarkBlue: hsl(212, 21%, 14%);
+    --darkGrayishBlue: hsl(228, 12%, 48%);
+}
+/* 1. Use a more-intuitive box-sizing model. */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+/* 2. Remove default margin */
+* {
+  margin: 0;
+}
+/* Typographic tweaks!
+3. Add accessible line-height
+4. Improve text rendering
+*/
+body {
+    line-height: 1.5;
+    color: var(--veryDarkBlue);
+    background-color: var(--cream);
+    -webkit-font-smoothing: antialiased;
+    font-family: 'Montserrat', 'sans-serif';
+}
+/*   5. Improve media defaults */
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+/* 6. Remove built-in form typography styles */
+input, button, textarea, select {
+  font: inherit;
+}
+/* 7. Avoid text overflows */
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+/* 8. Create a root stacking context */
+#root, #__next {
+  isolation: isolate;
+}
+/* ----------------------------------------------------------- */
+#desktop-img { display: none; }
+#mobile-img { display: inline-grid; }
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+}
+.main {
+    margin: 1rem;
+    display: grid;
+    grid-template-areas: 
+    'first'
+    'second'
+    ;
+    max-width: 25rem;
+    background-color: var(--white);
+    border-radius: .5rem;
+}
+.first img {
+    border-radius: .5rem .5rem 0 0 ;
+}
+.first { grid-area: first; }
+.second { 
+    grid-area: second; 
+    padding: 1rem 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content:space-between;
+    gap: .5rem;
+}
+.second > h1 {
+    font-size: 1rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--darkGrayishBlue);
+    font-family: 'Montserrat', 'sans-serif';
+}
+.second > h2 {
+    font-size: 1.8rem;
+    color: var(--veryDarkBlue);
+    font-family: 'Fraunces', "serif";
+}
+.second > p {
+    font-size: .81rem;
+    color: var(--darkGrayishBlue);
+    font-family: 'Montserrat', 'sans-serif';
+}
+.price > p {
+    display: flex;
+    align-items: center;
+    gap: .8rem;
+    font-family: 'Fraunces', "serif";
+    color: var(--darkCyan);
+    font-size: 2rem;
+}
+.price > p > span {
+    font-size: .8rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: flex-start;
+    text-decoration: line-through;
+    color: var(--darkGrayishBlue);
+    font-family: 'Montserrat', 'sans-serif';
+}
+.btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: .8rem;
+    font-weight: 500;
+    color: var(--white);
+    background-color: var(--darkCyan);
+    padding: 1rem 4rem;
+    border-radius: .6rem;
+}
+.btn:hover {
+    background-color: hsla(157, 79%, 11%, 0.925);;
+}
+
+/* ----------------------------------------------------------- */
+
+@media (min-width:768px) {
+    .main { max-width: 30rem; }
+    .second > h1 { font-size: 1.2rem; }
+    .second > h2 { font-size: 2.8rem; }
+    .second > p { font-size: 1.25rem; }
+}
+@media (min-width:1024px) {
+    #desktop-img { display: block; }
+    #mobile-img { display: none; }
+    .first img { border-radius: .5rem 0 0 .5rem; }
+    body {
+        min-height: 100dvh;
+    }
+    .main {
+        margin: 0;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-areas:         
+        'first second'
+        ;
+        max-width: 50rem;
+    }
+    .second {
+        justify-content: space-evenly;
+    }
+    .second > h1 { font-size: 1.2rem; }
+    .second > h2 { font-size: 2.9rem; }
+    .second > p { font-size: 1.25rem; }
+}
